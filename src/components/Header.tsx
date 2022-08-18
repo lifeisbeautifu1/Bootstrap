@@ -21,7 +21,7 @@ const Header = () => {
             className="w-full h-ful object-cover"
           />
         </div>
-        <h1 className="header-h1 mb-2 text-center font-semibold leading-none">
+        <h1 className="header-h1 mb-2 text-center font-semibold leading-none px-8 md:px-0">
           Build fast, responsive sites with Bootstrap
         </h1>
         <p className="my-2 text-[16px] text-center  text-gray-500 leading-[1.5]">

@@ -1,9 +1,10 @@
-import { Navbar } from './components';
+import { Navbar, Header } from './components';
 
 const App = () => {
   return (
-    <div className="">
+    <div className="relative">
       <Navbar />
+      <Header />
     </div>
   );
 };

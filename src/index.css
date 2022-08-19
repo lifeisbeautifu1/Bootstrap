@@ -2,6 +2,7 @@
 @tailwind components;
 @tailwind utilities;
 
+
 :root {
   --bd-purple: #4c0bce;
   --bd-violet: #712cf9;
@@ -164,4 +165,42 @@
 .peer:hover > svg {
   transition: transform 0.5s;
   transform: translateX(5px);
+}
+
+.orange {
+  color: #bc4c00;
+}
+
+.brown {
+  color: #9a6700;
+}
+
+.purple {
+  color: #795da3;
+}
+
+.blue {
+  color: #183691;
+}
+
+.import {
+  color: #a71d5d;
+}
+
+.teal {
+  color: #087990;
+}
+
+.animate-me-baby {
+  animation: appear 1s;
+}
+
+@keyframes appear {
+  from {
+    opacity: 0;
+  }
+
+  to {
+    opacity: 1;
+  }
 }

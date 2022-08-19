@@ -24,11 +24,11 @@ const Navbar = () => {
   }, []);
 
   return (
-    <div className="fixed top-0 left-0 right-0  bg-primary text-white w-full">
+    <div className="fixed z-[10] top-0 left-0 right-0  bg-primary text-white w-full">
       <div className="w-full lg:w-[90%] mx-auto py-4 flex items-center relative justify-center lg:justify-between">
         {showSidebar && (
           <div
-            className="lg:hidden z-[5] absolute top-0 left-0 w-[100vw] h-[100vh] bg-black/50"
+            className="lg:hidden z-[100] absolute top-0 left-0 w-[100vw] h-[100vh] bg-black/50 animate-me-baby"
             onClick={() => setShowSidebar(false)}
           ></div>
         )}
@@ -57,7 +57,7 @@ const Navbar = () => {
           <BiDotsHorizontalRounded />
         </div>
         <div
-          className={`absolute z-10 h-[100vh] bg-primary w-[400px] flex flex-col lg:flex-row  lg:bg-inherit px-6 py-4 lg:px-0  lg:py-0 top-0 bottom-0 right-0 lg:h-auto justify-start lg:relative  items-start lg:items-center lg:justify-between lg:w-full sidebar ${
+          className={`absolute z-[100] h-[100vh] bg-primary w-[400px] flex flex-col lg:flex-row  lg:bg-inherit px-6 py-4 lg:px-0  lg:py-0 top-0 bottom-0 right-0 lg:h-auto justify-start lg:relative  items-start lg:items-center lg:justify-between lg:w-full sidebar ${
             showSidebar ? 'active' : 'nactive'
           }`}
         >

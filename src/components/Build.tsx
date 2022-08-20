@@ -103,7 +103,7 @@ const Build = () => {
             </pre>
 
             <span
-              className="absolute top-[18px] right-5"
+              className="absolute top-[18px] hidden md:block right-5"
               onClick={() =>
                 navigator.clipboard.writeText(`.component {
   color: var(--bs-gray-800);
@@ -177,7 +177,7 @@ const Build = () => {
             </pre>
 
             <span
-              className="absolute top-[18px] right-5"
+              className="absolute hidden md:block top-[18px] right-5"
               onClick={() =>
                 navigator.clipboard.writeText(`body {
   --bs-body-font-family: var(--bs-font-monospace);

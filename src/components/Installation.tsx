@@ -26,7 +26,7 @@ const Installation = () => {
             <span className="select-none text-gray-500">$</span>
             <code>npm i bootstrap@5.2.0</code>
             <span
-              className="absolute top-[18px] right-5"
+              className="absolute top-[18px] right-5 hidden md:block"
               onClick={() =>
                 navigator.clipboard.writeText('npm i bootstrap@5.2.0')
               }
@@ -38,7 +38,7 @@ const Installation = () => {
             <span className="select-none text-gray-500">$</span>
             <code>gem install bootstrap -v 5.2.0</code>
             <span
-              className="absolute top-[18px] right-5"
+              className="absolute top-[18px] right-5 hidden md:block"
               onClick={() =>
                 navigator.clipboard.writeText('gem install bootstrap -v 5.2.0')
               }
@@ -53,7 +53,7 @@ const Installation = () => {
             for more info and additional package managers.
           </p>
         </div>
-        <div className="bg-gray-200  w-[1px] hidden lg:block mx-12"></div>
+        <div className="bg-gray-200  w-[1px] hidden md:block mx-12"></div>
         <div className="w-full lg:w-[47%] flex flex-col gap-4 items-start">
           <BsGlobe className="text-3xl text-gray-500" />
           <h1 className="text-2xl lg:text-3xl font-medium">Include via CDN</h1>
@@ -105,7 +105,7 @@ const Installation = () => {
             </pre>
 
             <span
-              className="absolute top-[18px] right-5"
+              className="absolute top-[18px] right-5 hidden md:block"
               onClick={() =>
                 navigator.clipboard.writeText(`<!-- CSS only -->
 <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-gH2yIJqKdNHPEq0n4Mqa/HGKIhSkIHeL5AyhkYV8i59U5AR6csBvApHHNl/vI1Bx" crossorigin="anonymous">`)
@@ -138,7 +138,7 @@ const Installation = () => {
             </pre>
 
             <span
-              className="absolute top-[18px] right-5"
+              className="absolute top-[18px] right-5 hidden md:block"
               onClick={() =>
                 navigator.clipboard
                   .writeText(`<!-- JavaScript Bundle with Popper -->

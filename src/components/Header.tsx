@@ -34,7 +34,7 @@ const Header = () => {
             <span className="select-none text-gray-500">$</span>
             <code>npm i bootstrap@5.2.0</code>
             <span
-              className="absolute top-[18px] right-5"
+              className="absolute top-[18px] right-5 hidden md:block"
               onClick={() =>
                 navigator.clipboard.writeText('npm i bootstrap@5.2.0')
               }

@@ -52,7 +52,7 @@ const Customize = () => {
             <pre className="overflow-auto">
               <code className="text-left language-css flex flex-col">
                 <span className="text-gray-500">
-                  // Variable overrides first
+                  &#47;&#47; Variable overrides first
                 </span>
                 <span>
                   <span className="orange">$primary</span>:{' '}
@@ -67,7 +67,9 @@ const Customize = () => {
                   <span className="blue">"mo-"</span>;
                 </span>
                 <br />
-                <span className="text-gray-500">// Then import Bootstrap</span>
+                <span className="text-gray-500">
+                  &#47;&#47; Then import Bootstrap
+                </span>
                 <span>
                   <span className="import">@import</span>{' '}
                   <span className="blue">
@@ -79,7 +81,7 @@ const Customize = () => {
             </pre>
 
             <span
-              className="absolute top-[18px] right-5"
+              className="absolute top-[18px] hidden md:block right-5"
               onClick={() =>
                 navigator.clipboard.writeText(`// Variable overrides first
 $primary: #900;
@@ -113,9 +115,10 @@ $prefix: "mo-";
           <div className="w-full relative z-[1] p-4 rounded bg-[#f8f9fa] flex items-center justify-start gap-2 text-center pr-16 text-sm">
             <pre className="overflow-auto">
               <code className="text-left language-css flex flex-col">
-                <span className="text-gray-500">// Functions first</span>
+                <span className="text-gray-500">
+                  &#47;&#47; Functions first
+                </span>
                 <span>
-                  {' '}
                   <span className="import">@import</span>{' '}
                   <span className="blue">
                     "../node_modules/bootstrap/scss/functions"
@@ -124,7 +127,7 @@ $prefix: "mo-";
                 </span>
                 <br />
                 <span className="text-gray-500">
-                  // Variable overrides Second
+                  &#47;&#47; Variable overrides Second
                 </span>
                 <span>
                   <span className="orange">$primary</span>:{' '}
@@ -140,10 +143,9 @@ $prefix: "mo-";
                 </span>
                 <br />
                 <span className="text-gray-500">
-                  // Required Bootstrap imports
+                  &#47;&#47; Required Bootstrap imports
                 </span>
                 <span>
-                  {' '}
                   <span className="import">@import</span>{' '}
                   <span className="blue">
                     "../node_modules/bootstrap/scss/variables"
@@ -151,7 +153,6 @@ $prefix: "mo-";
                   ;
                 </span>
                 <span>
-                  {' '}
                   <span className="import">@import</span>{' '}
                   <span className="blue">
                     "../node_modules/bootstrap/scss/maps"
@@ -159,7 +160,6 @@ $prefix: "mo-";
                   ;
                 </span>
                 <span>
-                  {' '}
                   <span className="import">@import</span>{' '}
                   <span className="blue">
                     "../node_modules/bootstrap/scss/mixins"
@@ -167,7 +167,6 @@ $prefix: "mo-";
                   ;
                 </span>
                 <span>
-                  {' '}
                   <span className="import">@import</span>{' '}
                   <span className="blue">
                     "../node_modules/bootstrap/scss/root"
@@ -175,9 +174,10 @@ $prefix: "mo-";
                   ;
                 </span>
                 <br />
-                <span className="text-gray-500">// Optional components</span>
+                <span className="text-gray-500">
+                  &#47;&#47; Optional components
+                </span>
                 <span>
-                  {' '}
                   <span className="import">@import</span>{' '}
                   <span className="blue">
                     "../node_modules/bootstrap/scss/utilities"
@@ -185,7 +185,6 @@ $prefix: "mo-";
                   ;
                 </span>
                 <span>
-                  {' '}
                   <span className="import">@import</span>{' '}
                   <span className="blue">
                     "../node_modules/bootstrap/scss/reboot"
@@ -194,7 +193,6 @@ $prefix: "mo-";
                 </span>
                 <span>
                   <span>
-                    {' '}
                     <span className="import">@import</span>{' '}
                     <span className="blue">
                       "../node_modules/bootstrap/scss/containers"
@@ -203,7 +201,6 @@ $prefix: "mo-";
                   </span>
                 </span>
                 <span>
-                  {' '}
                   <span className="import">@import</span>{' '}
                   <span className="blue">
                     "../node_modules/bootstrap/scss/grid"
@@ -211,7 +208,6 @@ $prefix: "mo-";
                   ;
                 </span>
                 <span>
-                  {' '}
                   <span className="import">@import</span>{' '}
                   <span className="blue">
                     "../node_modules/bootstrap/scss/helpers"
@@ -219,7 +215,6 @@ $prefix: "mo-";
                   ;
                 </span>
                 <span>
-                  {' '}
                   <span className="import">@import</span>{' '}
                   <span className="blue">
                     "../node_modules/bootstrap/scss/utilities/api"
@@ -230,7 +225,7 @@ $prefix: "mo-";
             </pre>
 
             <span
-              className="absolute top-[18px] right-5"
+              className="absolute top-[18px] hidden md:block right-5"
               onClick={() =>
                 navigator.clipboard.writeText(`// Functions first
 @import "../node_modules/bootstrap/scss/functions";

@@ -5,6 +5,8 @@ import {
   Installation,
   Customize,
   Build,
+  Components,
+  Powerful,
   Section,
   Section2,
 } from './components';
@@ -18,6 +20,8 @@ const App = () => {
       <Installation />
       <Customize />
       <Build />
+      <Components />
+      <Powerful />
       <Section />
       <Section2 />
     </div>

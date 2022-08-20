@@ -25,11 +25,11 @@ const Section = () => {
           Make it yours with official Bootstrap Themes
         </h1>
         <p className="text-[16px] md:text-lg lg:text-xl">
-          Take Bootstrap to the next level with premium themes from the{' '}
-          <span className="text-blue-600 underline inline-block hover:text-blue-800 cursor-pointer">
+          Take Bootstrap to the next level with premium themes from the
+          <span className="text-blue-600 underline  hover:text-blue-800 cursor-pointer">
             {' '}
-            official Bootstrap Themes marketplace{' '}
-          </span>{' '}
+            official Bootstrap Themes marketplace
+          </span>
           . Themes are built on Bootstrap as their own extended frameworks, rich
           with new components and plugins, documentation, and powerful build
           tools.

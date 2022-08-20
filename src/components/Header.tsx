@@ -12,7 +12,7 @@ const Header = () => {
           <button className="bg-[#ffe484] font-bold py-[6px] px-2 rounded-md shadow">
             New in v5.2
           </button>
-          <p className="text-gray-500">
+          <p className="text-gray-500 text-center">
             CSS variables, responsive offcanvas, new utilities, and more!
           </p>
         </div>
@@ -32,7 +32,7 @@ const Header = () => {
           bring projects to life with powerful JavaScript plugins.
         </p>
         <div className="mt-4 flex flex-col lg:justify-center lg:flex-row lg:items-center gap-4 w-full">
-          <div className="relative z-[1] p-4 rounded bg-code flex items-center justify-center gap-2 text-center pr-16 h-[60px]">
+          <div className="relative z-[1] p-4 rounded bg-code flex items-center justify-center gap-2 text-center pr-4 md:pr-16 h-[60px]">
             <span className="select-none text-gray-500">$</span>
             <code>npm i bootstrap@5.2.0</code>
             <span
@@ -63,7 +63,7 @@ const Header = () => {
             Read the docs
           </button>
         </div>
-        <p className="mt-4 flex items-center gap-2 text-gray-500">
+        <p className="mt-4 flex flex-wrap justify-center items-center gap-2 text-gray-500">
           Currently <span className="font-semibold">v5.2.0</span> ·{' '}
           <span className="underline hover:text-gray-600 cursor-pointer">
             Download

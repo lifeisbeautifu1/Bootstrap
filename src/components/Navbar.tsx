@@ -57,7 +57,7 @@ const Navbar = () => {
           <BiDotsHorizontalRounded />
         </div>
         <div
-          className={`absolute z-[100] h-[100vh] bg-primary w-[400px] flex flex-col lg:flex-row  lg:bg-inherit px-6 py-4 lg:px-0  lg:py-0 top-0 bottom-0 right-0 lg:h-auto justify-start lg:relative  items-start lg:items-center lg:justify-between lg:w-full sidebar ${
+          className={`absolute z-[100] h-[100vh] bg-primary w-[100vw] sm:w-[400px] flex flex-col lg:flex-row  lg:bg-inherit px-6 py-4 lg:px-0  lg:py-0 top-0 bottom-0 right-0 lg:h-auto justify-start lg:relative  items-start lg:items-center lg:justify-between lg:w-full sidebar ${
             showSidebar ? 'active' : 'nactive'
           }`}
         >

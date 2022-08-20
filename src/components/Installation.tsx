@@ -27,7 +27,7 @@ const Installation = () => {
             to quickly generate a Bootstrap project via npm.
           </p>
 
-          <div className="w-full relative z-[1] p-4 rounded bg-[#f8f9fa] flex items-center justify-start gap-2 text-center pr-16 h-[60px] text-sm">
+          <div className="w-full relative z-[1] p-4 rounded bg-[#f8f9fa] flex items-center justify-start gap-2 text-center pr-4 md:pr-16 h-[60px] text-sm">
             <span className="select-none text-gray-500">$</span>
             <code>npm i bootstrap@5.2.0</code>
             <span
@@ -53,9 +53,11 @@ const Installation = () => {
               </span>
             </span>
           </div>
-          <div className="w-full relative z-[1] p-4 rounded bg-[#f8f9fa] flex items-center justify-start gap-2 text-center pr-16 h-[60px] text-sm">
+          <div className="w-full relative z-[1] p-4 rounded bg-[#f8f9fa] flex items-center justify-start gap-2 text-center pr-0 md:pr-16 h-[60px] text-sm ">
             <span className="select-none text-gray-500">$</span>
-            <code>gem install bootstrap -v 5.2.0</code>
+            <code className="overflow-auto whitespace-nowrap">
+              <span>gem install bootstrap -v 5.2.0</span>
+            </code>
             <span
               className="absolute top-[18px] right-5 hidden md:block"
               onClick={() => {
@@ -212,7 +214,7 @@ const Installation = () => {
         </div>
       </div>
       <div className="mt-12 w-full px-6 lg:w-[90%] mx-auto lg:px-0 flex flex-col items-center">
-        <h1 className="text-2xl font-medium">
+        <h1 className="text-2xl font-medium text-center sm:text-left">
           Read our getting started guides
         </h1>
         <p className="mt-2 mb-6 text-center">

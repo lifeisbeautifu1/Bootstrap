@@ -1,7 +1,8 @@
-import React, { useEffect } from 'react';
-import { BsClipboard } from 'react-icons/bs';
+import { useEffect, useState } from 'react';
+import { BsClipboard, BsCheck2 } from 'react-icons/bs';
 
 const Components = () => {
+  const [clipboard, setClipboard] = useState('Copy to clipboard');
   useEffect(() => {
     const items = document.querySelectorAll('.nav-item');
 
@@ -195,7 +196,7 @@ const Components = () => {
 
           <span
             className="absolute top-[18px] hidden md:block right-5"
-            onClick={() =>
+            onClick={() => {
               navigator.clipboard
                 .writeText(`// Create and extend utilities with the Utility API
 
@@ -211,10 +212,24 @@ $utilities: map-merge(
       values: auto pointer grab,
     )
   )
-);`)
-            }
+);`);
+              setClipboard('Copied!');
+              setTimeout(() => setClipboard('Copy to clipboard'), 2000);
+            }}
           >
-            <BsClipboard className="cursor-pointer hover:text-[#0d6efd] text-lg" />
+            {clipboard === 'Copied!' ? (
+              <BsCheck2 className="text-xl cursor-pointer hover:text-[#0d6efd] peer" />
+            ) : (
+              <BsClipboard className="cursor-pointer hover:text-[#0d6efd] text-xl peer" />
+            )}
+
+            <span
+              className={`peer-hover:block tooltip hidden absolute -top-10 -left-14 
+                 w-[130px]
+                rounded bg-black text-white p-1 text-sm`}
+            >
+              {clipboard}
+            </span>
           </span>
         </div>
       </div>

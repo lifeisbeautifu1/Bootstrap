@@ -1,6 +1,9 @@
-import { BsClipboard, BsPalette2 } from 'react-icons/bs';
+import { BsClipboard, BsPalette2, BsCheck2 } from 'react-icons/bs';
+import { useState } from 'react';
 
 const Customize = () => {
+  const [clipboard, setClipboard] = useState('Copy to clipboard');
+  const [clipboard2, setClipboard2] = useState('Copy to clipboard');
   return (
     <>
       <div className="flex flex-col lg:flex-row gap-8 lg:gap-16 items-start   w-full px-6 lg:px-0 lg:w-[90%] mx-auto my-12">
@@ -82,17 +85,31 @@ const Customize = () => {
 
             <span
               className="absolute top-[18px] hidden md:block right-5"
-              onClick={() =>
+              onClick={() => {
                 navigator.clipboard.writeText(`// Variable overrides first
 $primary: #900;
 $enable-shadows: true;
 $prefix: "mo-";
 
 // Then import Bootstrap
-@import "../node_modules/bootstrap/scss/bootstrap";`)
-              }
+@import "../node_modules/bootstrap/scss/bootstrap";`);
+                setClipboard2('Copied!');
+                setTimeout(() => setClipboard2('Copy to clipboard'), 2000);
+              }}
             >
-              <BsClipboard className="cursor-pointer hover:text-[#0d6efd] text-lg" />
+              {clipboard2 === 'Copied!' ? (
+                <BsCheck2 className="text-xl cursor-pointer hover:text-[#0d6efd] peer" />
+              ) : (
+                <BsClipboard className="cursor-pointer hover:text-[#0d6efd] text-xl peer" />
+              )}
+
+              <span
+                className={`peer-hover:block tooltip hidden absolute -top-10 -left-14 
+                 w-[130px]
+                rounded bg-black text-white p-1 text-sm`}
+              >
+                {clipboard2}
+              </span>
             </span>
           </div>
 
@@ -226,7 +243,7 @@ $prefix: "mo-";
 
             <span
               className="absolute top-[18px] hidden md:block right-5"
-              onClick={() =>
+              onClick={() => {
                 navigator.clipboard.writeText(`// Functions first
 @import "../node_modules/bootstrap/scss/functions";
 
@@ -247,10 +264,24 @@ $prefix: "mo-";
 @import "../node_modules/bootstrap/scss/containers";
 @import "../node_modules/bootstrap/scss/grid";
 @import "../node_modules/bootstrap/scss/helpers";
-@import "../node_modules/bootstrap/scss/utilities/api";`)
-              }
+@import "../node_modules/bootstrap/scss/utilities/api";`);
+                setClipboard('Copied!');
+                setTimeout(() => setClipboard('Copy to clipboard'), 2000);
+              }}
             >
-              <BsClipboard className="cursor-pointer hover:text-[#0d6efd] text-lg" />
+              {clipboard === 'Copied!' ? (
+                <BsCheck2 className="text-xl cursor-pointer hover:text-[#0d6efd] peer" />
+              ) : (
+                <BsClipboard className="cursor-pointer hover:text-[#0d6efd] text-xl peer" />
+              )}
+
+              <span
+                className={`peer-hover:block tooltip hidden absolute -top-10 -left-14 
+                 w-[130px]
+                rounded bg-black text-white p-1 text-sm`}
+              >
+                {clipboard}
+              </span>
             </span>
           </div>
           <p>

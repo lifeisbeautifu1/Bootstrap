@@ -1,9 +1,14 @@
-import { BsBoxSeam, BsClipboard, BsGlobe } from 'react-icons/bs';
+import { BsBoxSeam, BsClipboard, BsGlobe, BsCheck2 } from 'react-icons/bs';
+import { useState } from 'react';
 import Webpack from '../assets/webpack.png';
 import Parcel from '../assets/parcel.png';
 import Vite from '../assets/vite.png';
 
 const Installation = () => {
+  const [clipboard, setClipboard] = useState('Copy to clipboard');
+  const [clipboard2, setClipboard2] = useState('Copy to clipboard');
+  const [clipboard3, setClipboard3] = useState('Copy to clipboard');
+  const [clipboard4, setClipboard4] = useState('Copy to clipboard');
   return (
     <>
       <div className="flex flex-col lg:flex-row gap-8 lg:gap-0 w-full px-6 lg:px-0 lg:w-[90%] mx-auto">
@@ -27,11 +32,25 @@ const Installation = () => {
             <code>npm i bootstrap@5.2.0</code>
             <span
               className="absolute top-[18px] right-5 hidden md:block"
-              onClick={() =>
-                navigator.clipboard.writeText('npm i bootstrap@5.2.0')
-              }
+              onClick={() => {
+                navigator.clipboard.writeText('npm i bootstrap@5.2.0');
+                setClipboard3('Copied!');
+                setTimeout(() => setClipboard3('Copy to clipboard'), 2000);
+              }}
             >
-              <BsClipboard className="cursor-pointer hover:text-[#0d6efd] text-lg" />
+              {clipboard3 === 'Copied!' ? (
+                <BsCheck2 className="text-xl cursor-pointer hover:text-[#0d6efd] peer" />
+              ) : (
+                <BsClipboard className="cursor-pointer hover:text-[#0d6efd] text-xl peer" />
+              )}
+
+              <span
+                className={`peer-hover:block tooltip hidden absolute -top-10 -left-14 
+                 w-[130px]
+                rounded bg-black text-white p-1 text-sm`}
+              >
+                {clipboard3}
+              </span>
             </span>
           </div>
           <div className="w-full relative z-[1] p-4 rounded bg-[#f8f9fa] flex items-center justify-start gap-2 text-center pr-16 h-[60px] text-sm">
@@ -39,11 +58,25 @@ const Installation = () => {
             <code>gem install bootstrap -v 5.2.0</code>
             <span
               className="absolute top-[18px] right-5 hidden md:block"
-              onClick={() =>
-                navigator.clipboard.writeText('gem install bootstrap -v 5.2.0')
-              }
+              onClick={() => {
+                navigator.clipboard.writeText('gem install bootstrap -v 5.2.0');
+                setClipboard4('Copied!');
+                setTimeout(() => setClipboard4('Copy to clipboard'), 2000);
+              }}
             >
-              <BsClipboard className="cursor-pointer hover:text-[#0d6efd] text-lg" />
+              {clipboard4 === 'Copied!' ? (
+                <BsCheck2 className="text-xl cursor-pointer hover:text-[#0d6efd] peer" />
+              ) : (
+                <BsClipboard className="cursor-pointer hover:text-[#0d6efd] text-xl peer" />
+              )}
+
+              <span
+                className={`peer-hover:block tooltip hidden absolute -top-10 -left-14 
+                 w-[130px]
+                rounded bg-black text-white p-1 text-sm`}
+              >
+                {clipboard4}
+              </span>
             </span>
           </div>
           <p>
@@ -106,12 +139,26 @@ const Installation = () => {
 
             <span
               className="absolute top-[18px] right-5 hidden md:block"
-              onClick={() =>
+              onClick={() => {
                 navigator.clipboard.writeText(`<!-- CSS only -->
-<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-gH2yIJqKdNHPEq0n4Mqa/HGKIhSkIHeL5AyhkYV8i59U5AR6csBvApHHNl/vI1Bx" crossorigin="anonymous">`)
-              }
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-gH2yIJqKdNHPEq0n4Mqa/HGKIhSkIHeL5AyhkYV8i59U5AR6csBvApHHNl/vI1Bx" crossorigin="anonymous">`);
+                setClipboard('Copied!');
+                setTimeout(() => setClipboard('Copy to clipboard'), 2000);
+              }}
             >
-              <BsClipboard className="cursor-pointer hover:text-[#0d6efd] text-lg" />
+              {clipboard === 'Copied!' ? (
+                <BsCheck2 className="text-xl cursor-pointer hover:text-[#0d6efd] peer" />
+              ) : (
+                <BsClipboard className="cursor-pointer hover:text-[#0d6efd] text-xl peer" />
+              )}
+
+              <span
+                className={`peer-hover:block tooltip hidden absolute -top-10 -left-14 
+                 w-[130px]
+                rounded bg-black text-white p-1 text-sm`}
+              >
+                {clipboard}
+              </span>
             </span>
           </div>
           <div className="w-full relative z-[1] p-4 pr-12 rounded bg-[#f8f9fa] flex items-center justify-start gap-2 text-center text-sm">
@@ -139,13 +186,27 @@ const Installation = () => {
 
             <span
               className="absolute top-[18px] right-5 hidden md:block"
-              onClick={() =>
+              onClick={() => {
                 navigator.clipboard
                   .writeText(`<!-- JavaScript Bundle with Popper -->
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-A3rJD856KowSb7dwlZdYEkO39Gagi7vIsF0jrRAoQmDKKtQBHUuLZ9AsSv4jD4Xa" crossorigin="anonymous"></script>`)
-              }
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-A3rJD856KowSb7dwlZdYEkO39Gagi7vIsF0jrRAoQmDKKtQBHUuLZ9AsSv4jD4Xa" crossorigin="anonymous"></script>`);
+                setClipboard2('Copied!');
+                setTimeout(() => setClipboard2('Copy to clipboard'), 2000);
+              }}
             >
-              <BsClipboard className="cursor-pointer hover:text-[#0d6efd] text-lg" />
+              {clipboard2 === 'Copied!' ? (
+                <BsCheck2 className="text-xl cursor-pointer hover:text-[#0d6efd] peer" />
+              ) : (
+                <BsClipboard className="cursor-pointer hover:text-[#0d6efd] text-xl peer" />
+              )}
+
+              <span
+                className={`peer-hover:block tooltip hidden absolute -top-10 -left-14 
+                 w-[130px]
+                rounded bg-black text-white p-1 text-sm`}
+              >
+                {clipboard2}
+              </span>
             </span>
           </div>
         </div>

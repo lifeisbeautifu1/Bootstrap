@@ -1,8 +1,10 @@
-import { BsBookHalf, BsClipboard } from 'react-icons/bs';
+import { BsBookHalf, BsClipboard, BsCheck2 } from 'react-icons/bs';
+import { useState } from 'react';
 
 import Logo from '../assets/bootstrap-logo-shadow.png';
 
 const Header = () => {
+  const [clipboard, setClipboard] = useState('Copy to clipboard');
   return (
     <div className="header__gradient px-6 lg:p-0">
       <div className="w-full md:w-[60%] mx-auto pt-28 flex flex-col items-center">
@@ -35,11 +37,25 @@ const Header = () => {
             <code>npm i bootstrap@5.2.0</code>
             <span
               className="absolute top-[18px] right-5 hidden md:block"
-              onClick={() =>
-                navigator.clipboard.writeText('npm i bootstrap@5.2.0')
-              }
+              onClick={() => {
+                setClipboard('Copied!');
+                navigator.clipboard.writeText('npm i bootstrap@5.2.0');
+                setTimeout(() => setClipboard('Copy to clipboard'), 2000);
+              }}
             >
-              <BsClipboard className="cursor-pointer hover:text-[#0d6efd] text-xl" />
+              {clipboard === 'Copied!' ? (
+                <BsCheck2 className="text-xl cursor-pointer hover:text-[#0d6efd] peer" />
+              ) : (
+                <BsClipboard className="cursor-pointer hover:text-[#0d6efd] text-xl peer" />
+              )}
+
+              <span
+                className={`peer-hover:block tooltip hidden absolute -top-12 -left-14 
+                 w-[130px]
+                rounded bg-black text-white p-1 text-sm`}
+              >
+                {clipboard}
+              </span>
             </span>
           </div>
           <button className="bg-primary text-center w-full lg:w-auto text-white flex items-center justify-center gap-2 text-xl font-semibold py-4 px-8 rounded-md shadow hover:bg-[#6528e0]">

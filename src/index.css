@@ -211,3 +211,16 @@
 .nav-item2.active {
   @apply bg-blue-500 text-white;
 }
+.tooltip::after {
+  content: '';
+  position: absolute;
+  bottom: -5px;
+  left: 45%;
+  width: 0;
+  height: 0;
+  border-left: 5px solid transparent;
+  border-right: 5px solid transparent;
+
+  border-top: 5px solid #000;
+
+}

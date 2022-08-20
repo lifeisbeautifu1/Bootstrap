@@ -204,3 +204,10 @@
     opacity: 1;
   }
 }
+.nav-item.active {
+  @apply bg-blue-500 text-white;
+}
+
+.nav-item2.active {
+  @apply bg-blue-500 text-white;
+}

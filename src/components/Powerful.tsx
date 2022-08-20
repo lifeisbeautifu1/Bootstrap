@@ -1,6 +1,24 @@
 import { BsClipboard } from 'react-icons/bs';
+import { useState, useEffect, useRef } from 'react';
+import { GoTriangleDown } from 'react-icons/go';
 
 const Powerful = () => {
+  const [showDropDown, setShowDropDown] = useState(false);
+
+  const buttonRef = useRef<HTMLDivElement>(null);
+
+  useEffect(() => {
+    const clickOutside = (e: MouseEvent) => {
+      if (
+        e.target !== buttonRef.current &&
+        !buttonRef.current?.contains(e.target as Node)
+      ) {
+        setShowDropDown(false);
+      }
+    };
+    window.addEventListener('click', clickOutside);
+    return () => window.removeEventListener('click', clickOutside);
+  }, []);
   return (
     <>
       <div className="flex flex-col lg:flex-row gap-8 lg:gap-16 items-start   w-full px-6 lg:px-0 lg:w-[90%] mx-auto my-12">
@@ -13,7 +31,7 @@ const Powerful = () => {
               viewBox="0 0 16 16"
             >
               <path
-                fill-rule="evenodd"
+                fillRule="evenodd"
                 d="M1 8a7 7 0 1 1 2.898 5.673c-.167-.121-.216-.406-.002-.62l1.8-1.8a3.5 3.5 0 0 0 4.572-.328l1.414-1.415a.5.5 0 0 0 0-.707l-.707-.707 1.559-1.563a.5.5 0 1 0-.708-.706l-1.559 1.562-1.414-1.414 1.56-1.562a.5.5 0 1 0-.707-.706l-1.56 1.56-.707-.706a.5.5 0 0 0-.707 0L5.318 5.975a3.5 3.5 0 0 0-.328 4.571l-1.8 1.8c-.58.58-.62 1.6.121 2.137A8 8 0 1 0 0 8a.5.5 0 0 0 1 0Z"
               />
             </svg>
@@ -61,7 +79,28 @@ const Powerful = () => {
             allowing you to use JavaScript just by adding{' '}
             <span className="text-[#d63384]">data</span> attributes.
           </p>
-
+          <div className="my-2 p-4 rounded-md border border-gray-200 w-full">
+            <div
+              ref={buttonRef}
+              className="py-2 px-3 text-white bg-blue-500 cursor-pointer hover:bg-blue-600 w-[fit-content] rounded flex items-center gap-1 relative"
+              onClick={() => setShowDropDown(!showDropDown)}
+            >
+              Dropdown <GoTriangleDown />
+              {showDropDown && (
+                <ul className="py-2 w-[135%] absolute z-10 top-[105%] left-0 bg-white rounded border border-gray-200 text-black">
+                  <li className="px-3 py-[6px] hover:bg-gray-100">
+                    Dropdown item
+                  </li>
+                  <li className="px-3 py-[6px] hover:bg-gray-100">
+                    Dropdown item
+                  </li>
+                  <li className="px-3 py-[6px] hover:bg-gray-100">
+                    Dropdown item
+                  </li>
+                </ul>
+              )}
+            </div>
+          </div>
           <div className="w-full relative z-[1] p-4 rounded bg-[#f8f9fa] flex items-center justify-start gap-2 text-center pr-16 text-sm">
             <pre className="overflow-auto">
               <code className="text-left language-css flex flex-col">

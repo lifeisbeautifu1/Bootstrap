@@ -1,6 +1,26 @@
+import React, { useEffect } from 'react';
 import { BsClipboard } from 'react-icons/bs';
 
 const Components = () => {
+  useEffect(() => {
+    const items = document.querySelectorAll('.nav-item');
+
+    items.forEach((item) => {
+      item.addEventListener('click', (e: any) => {
+        items.forEach((item) => item.classList.remove('active'));
+        e.target.classList.add('active');
+      });
+    });
+
+    const items2 = document.querySelectorAll('.nav-item2');
+
+    items2.forEach((item) => {
+      item.addEventListener('click', (e: any) => {
+        items2.forEach((item) => item.classList.remove('active'));
+        e.target.classList.add('active');
+      });
+    });
+  }, []);
   return (
     <div className="flex flex-col lg:flex-row items-center gap-4 px-6 lg:px-0 w-full lg:w-[90%] mx-auto my-12 lg:my-36">
       <div className="w-full lg:w-1/2 flex flex-col gap-4 items-start">
@@ -42,7 +62,7 @@ const Components = () => {
               viewBox="0 0 16 16"
             >
               <path
-                fill-rule="evenodd"
+                fillRule="evenodd"
                 d="M1.114 8.063V7.9c1.005-.102 1.497-.615 1.497-1.6V4.503c0-1.094.39-1.538 1.354-1.538h.273V2h-.376C2.25 2 1.49 2.759 1.49 4.352v1.524c0 1.094-.376 1.456-1.49 1.456v1.299c1.114 0 1.49.362 1.49 1.456v1.524c0 1.593.759 2.352 2.372 2.352h.376v-.964h-.273c-.964 0-1.354-.444-1.354-1.538V9.663c0-.984-.492-1.497-1.497-1.6ZM14.886 7.9v.164c-1.005.103-1.497.616-1.497 1.6v1.798c0 1.094-.39 1.538-1.354 1.538h-.273v.964h.376c1.613 0 2.372-.759 2.372-2.352v-1.524c0-1.094.376-1.456 1.49-1.456v-1.3c-1.114 0-1.49-.362-1.49-1.456V4.352C14.51 2.759 13.75 2 12.138 2h-.376v.964h.273c.964 0 1.354.444 1.354 1.538V6.3c0 .984.492 1.497 1.497 1.6ZM7.5 11.5V9.207l-1.621 1.621-.707-.707L6.792 8.5H4.5v-1h2.293L5.172 5.879l.707-.707L7.5 6.792V4.5h1v2.293l1.621-1.621.707.707L9.208 7.5H11.5v1H9.207l1.621 1.621-.707.707L8.5 9.208V11.5h-1Z"
               />
             </svg>
@@ -102,6 +122,32 @@ const Components = () => {
         </span>
       </div>
       <div className="w-full lg:w-1/2 flex flex-col gap-4 items-start">
+        <div className="py-6 px-4 w-full rounded bg-white text-black border border-gray-200 mb-2">
+          <h1 className="font-medium">Quickly customize components</h1>
+          <hr className="my-4" />
+          <nav className="flex items-center">
+            <div className="active nav-item px-4 py-2 rounded cursor-pointer">
+              Home
+            </div>
+            <div className="nav-item px-4 py-2 rounded cursor-pointer">
+              Profile
+            </div>
+            <div className="nav-item px-4 py-2 rounded cursor-pointer">
+              Contact
+            </div>
+          </nav>
+          <nav className="mt-4 flex items-center border border-gray-200 rounded-full p-1 text-sm">
+            <div className="active text-center active rounded-full w-full nav-item2 px-4 py-2 cursor-pointer">
+              Home
+            </div>
+            <div className=" text-center nav-item2 rounded-full w-full px-4 py-2  cursor-pointer">
+              Profile
+            </div>
+            <div className=" text-center nav-item2 rounded-full w-full px-4 py-2  cursor-pointer">
+              Contact
+            </div>
+          </nav>
+        </div>
         <div className="w-full relative z-[1] p-4 py-5 rounded bg-[#f8f9fa] flex items-center justify-start gap-2 text-center pr-16 text-sm">
           <pre className="overflow-auto">
             <code className="text-left language-css flex flex-col">

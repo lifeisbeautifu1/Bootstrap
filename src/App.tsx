@@ -9,6 +9,7 @@ import {
   Powerful,
   Section,
   Section2,
+  Footer
 } from './components';
 
 const App = () => {
@@ -24,6 +25,7 @@ const App = () => {
       <Powerful />
       <Section />
       <Section2 />
+      <Footer />
     </div>
   );
 };

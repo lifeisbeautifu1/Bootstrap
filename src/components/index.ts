@@ -8,3 +8,4 @@ export { default as Components } from './Components';
 export { default as Powerful } from './Powerful';
 export { default as Section } from './Section';
 export { default as Section2 } from './Section2';
+export { default as Footer } from './Footer';
